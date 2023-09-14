@@ -73,16 +73,16 @@ public class Main {
         ArrayList<Alojamiento> alojamientos = new ArrayList<>();
 
         alojamientos.add(new Hotel4("Hotel A", "Dirección A", "Localidad A", "Gerente A",
-                40, 100, 9, 50000.0, "A",
+                40, 100, 9, "A",
                 "cielo", 50));
         alojamientos.add(new Hotel4("Hotel B", "Dirección B", "Localidad B", "Gerente B",
-                80, 160, 9, 80000.0, "A",
+                80, 160, 9, "A",
                 "campo", 70));
         alojamientos.add(new Hotel5("Hotel C", "Dirección C", "Localidad C", "Gerente C",
-                100, 250, 15, 5000.0, "A",
+                100, 250, 15, "A",
                 "plato", 50, 2, 10, 12));
         alojamientos.add(new Hotel5("Hotel D", "Dirección D", "Localidad D", "Gerente D",
-                140, 300, 20, 700000.0, "A",
+                140, 300, 20,  "A",
                 "posillo", 80, 2, 15, 22));
 
         alojamientos.add(new Camping("Camping A", "Dirección C", "Localidad C",
@@ -125,28 +125,26 @@ public class Main {
                     // Consultar todos los hoteles de más caro a más barato
                     System.out.println("\nHoteles de más caro a más barato:");
                     System.out.println("-----------------------------------");
-                    ArrayList<Hoteles> hotel = new ArrayList<>();
+                    ArrayList<Hotel4> hotel = new ArrayList<>();
                     for (Alojamiento elec : alojamientos) {
-                        if (elec instanceof Hotel4 || elec instanceof Hotel5) {
-                            hotel.add((Hoteles) elec);
+                        if (elec instanceof Hotel4) {
+                            hotel.add((Hotel4) elec);
                         }
                     }
                     // Define un comparador personalizado para comparar los objetos por el atributo deseado
-                    Comparator<Hoteles> comparador = new Comparator<Hoteles>() {
-
+                    Comparator<Hotel4> comparador = new Comparator<Hotel4>() {
                         @Override
-                        public int compare(Hoteles obj1, Hoteles obj2) {
-                            // Comparar los objetos en función del atributo deseado (en este caso, el valor)
+                        public int compare(Hotel4 obj1, Hotel4 obj2) {
                             // Orden descendente (de mayor a menor)
-                            return Double.compare(obj2.getPrecioHabitacion(), obj1.getPrecioHabitacion());
+                            return Double.compare(obj2.getPrecioTotal(), obj1.getPrecioTotal());
                         }
                     };
                     // Ordena la lista de objetos utilizando el comparador
                     Collections.sort(hotel, comparador);
 
                     // Imprime la lista ordenada
-                    for (Hoteles miObjeto : hotel) {
-                        System.out.println(miObjeto);
+                    for (Hoteles hoteles : hotel) {
+                        System.out.println(hoteles);
                     }
                     break;
                 case 3:

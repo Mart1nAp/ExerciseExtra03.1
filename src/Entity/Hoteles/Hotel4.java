@@ -12,10 +12,9 @@ public class Hotel4 extends Hoteles{
     public Hotel4(){}
 
     public Hotel4(String nombre, String direccion, String localidad, String gerente, int cantidadHabitaciones,
-                  int numeroCamas, int cantidadPisos, double precioHabitacion, String tipoGimnasio,
-                  String nombreRestaurante, int capacidadRestaurante) {
-        super(nombre, direccion, localidad, gerente, cantidadHabitaciones, numeroCamas, cantidadPisos,
-                precioHabitacion);
+                  int numeroCamas, int cantidadPisos, String tipoGimnasio, String nombreRestaurante,
+                  int capacidadRestaurante) {
+        super(nombre, direccion, localidad, gerente, cantidadHabitaciones, numeroCamas, cantidadPisos);
         this.tipoGimnasio = tipoGimnasio;
         this.nombreRestaurante = nombreRestaurante;
         this.capacidadRestaurante = capacidadRestaurante;

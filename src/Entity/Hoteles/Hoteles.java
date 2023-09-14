@@ -7,17 +7,16 @@ public class Hoteles extends Alojamiento {
     protected int cantidadHabitaciones;
     protected int numeroCamas;
     protected int cantidadPisos;
-    protected double precioHabitacion;
+
 
     public Hoteles(){}
 
     public Hoteles(String nombre, String direccion, String localidad, String gerente, int cantidadHabitaciones,
-                   int numeroCamas, int cantidadPisos, double precioHabitacion) {
+                   int numeroCamas, int cantidadPisos) {
         super(nombre, direccion, localidad, gerente);
         this.cantidadHabitaciones = cantidadHabitaciones;
         this.numeroCamas = numeroCamas;
         this.cantidadPisos = cantidadPisos;
-        this.precioHabitacion = precioHabitacion;
     }
 
     public int getCantidadHabitaciones() {
@@ -44,13 +43,6 @@ public class Hoteles extends Alojamiento {
         this.cantidadPisos = cantidadPisos;
     }
 
-    public double getPrecioHabitacion() {
-        return precioHabitacion;
-    }
-
-    public void setPrecioHabitacion(double precioHabitacion) {
-        this.precioHabitacion = precioHabitacion;
-    }
     @Override
     public String toString() {
         return "Hotel{" +
@@ -63,4 +55,6 @@ public class Hoteles extends Alojamiento {
                 ", cantidadPisos=" + cantidadPisos +
                 '}';
     }
+
 }
+
